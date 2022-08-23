@@ -12,7 +12,7 @@ let topMovies = [
 },
 {
     title:'Predator'
-}
+},
 {
     title:'Waynes World'
 },
