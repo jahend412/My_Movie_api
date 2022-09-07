@@ -1,15 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Movie Documentation App</title>
     </head>
     <body>
-        <h1>Documentation</h1>
-            <p> 
-                 This application is a server-side component for an app called "My Movie's".
+        <div class="description">
+            <h1>Documentation</h1>
+                <p> 
+                 This application is a server-side component for an app called "My Movie".
                  This application will provide users with access to information about movies, directors, and genres. 
                  This will allow users to sign up, update their personal information, and create a list of their favorite movies.   
-            </p>
+              </p>
+            </div>
+        <div class="endpoint-list">
+            <div class="endpoint">
+                <h2 class="endpoint-title">Get All Movies</h2>
+                <h3 class="endpoint-method">GET</h3>    
+                <h3 class="endpoint-url">movies</h3>
+                <h3 class="endpoint-request">none</h3>
+                <p class="endpoint-response">This endpoint returns movies that have an array with different objects that contains data about the movies. </p>
+            </div>
+            <div class="endpoint">
+                <h2 class="endpoint-title">Get A Movie</h2>
+                <h3 class="endpoint-method">GET</h3>    
+                <h3 class="endpoint-url">movies[Title]</h3>
+                <h3 class="endpoint-request">none</h3>
+                <p class="endpoint-response">This endpoint returns a movie that has an array with different objects that contains data about the movie. </p>
+                <pre>
+                    "Title": "Star Wars",
+                    "Description": "This is a movie that is about A galaxy far far away.  Darth Vadar is after some stolen plans of his new great weapon called the Death Star.",
+                    "Genre": {
+                        "Name": "Sci-Fi",
+                        "Description": "Science fiction is storytelling with a focus on characters dealing with advances in technology, science, the future, and space."
+                    },
+                    "Director": {
+                        "Name": "George Lucas",
+                        "Bio": "George Walton Lucas Jr. (born May 14, 1944) is an American film director, producer, screenwriter, and entrepreneur.  Lucas is best known for creating the Star Wars and Indiana Jones franchises and founding Lucasfilm, LucasArts, and Industrial Light & Magic."
+                    },
+                    "ImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/1200px-Star_wars2.svg.png",
+                    "Featured": false   
+                </pre>
+             </div>
+            <div class="endpoint">
+                <h2 class="endpoint-title">Add a movie</h2>
+                <h3 class="endpoint-method">POST</h3>
+                <h3 class="endpoint-url">/movies</h3>
+                <h3 class="endpoint-request">A movie that has data in the form of a JSON object</h3>
+                <p class="endpoint-response">  This endpoint returns the movie and the data that has been added.
+                    </p>
+            </div>    
+            <div class="endpoint">
+                <h2 class="endpoint-title">Remove a movie</h2>
+                <h3 class="endpoint-method">DELETE</h3>
+                <h3 class="endpoint-url">/movies/[Title]</h3>
+                <h3 class="endpoint-request">none</h3>
+                <p class="endpoint-response">A message that shows the User if the movie was successfully removed</p>
+            </div>
+            <div class="endpoint">
+                <h2 class="endpoint-title">Get a genre</h2>
+                <h3> class="endpoint-method">GET</h3>
+                <h3> class="endpoint-url">/genres/[Genre]</h3>
+                <h3> class="endpoint-request">none</h3>
+                <p class="endpoint-response">This response will hold data about a genre  </p>
+            </div>
+            <div class="endpoint">
+                <h2 class="endpoint-title">Get a director</h2>
+                <h3 class="endpoint-method">GET</h3>
+                <h3 class="endpoint-url">/directors/[Director]</h3>
+                <h3 class="endpoint-request">none</h3>
+                <p class="endpoint-response">This response will hold data about a director</p>
+            </div>
+            <div class="endpoint">
+                <h2 class="endpoint-title">Create a new user</h2>
+                <h3 class="endpoint-method">POST</h3>
+                <h3 class="endpoint-url">/users</h3>
+                <h3 class="endpoint-request">This will ask request data about the new user</h3>
+                <p class="endpoint-response">This response will hold data about a registerd user</p>
+            </div>
+            <div class="endpoint">
+                <h2 class="endpoint-title">Update an user</h2>
+                <h3 class="endpoint-method">PUT</h3>
+                <h3 class="endpoint-url">/users/[Username]</h3>
+                <h3 class="endpoint-request">none</h3>
+                <p class="endpoint-response">A message that shows the updated username </p>
+            </div>
+            <div class="endpoint">
+                <h2 class="endpoint-title">Delete an user</h2>
+                <h3 class="endpoint-method">DELETE</h3>
+                <h3 class="endpoint-url">/users/[Username]</h3>
+                <h3 class="endpoint-request">none</h3>
+                <p class="endpoint-response">A message indicating
+                    whether the user was successfully deregistered</p>
+            </div>
+        </div>
     </body>
 </html>
 
