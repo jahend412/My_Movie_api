@@ -14,7 +14,7 @@ const port = process.env.PORT || 8080;
   
 //mongoose.connect('mongodb://localhost:27017/myMovieDB', {useNewUrlParser: true, useUnifiedTopology: true });   //(Local connection)
 
-process.env.CONNECTION_URI
+mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(express.static('public'));
 app.use(morgan('common'));
