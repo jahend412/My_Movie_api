@@ -12,7 +12,9 @@ const Movies = Models.Movie;
 const Users = Models.User;
 const port = process.env.PORT || 8080;
   
-mongoose.connect('mongodb://localhost:27017/myMovieDB', {useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect('mongodb://localhost:27017/myMovieDB', {useNewUrlParser: true, useUnifiedTopology: true });   //(Local connection)
+
+process.env.CONNECTION_URI
 
 app.use(express.static('public'));
 app.use(morgan('common'));
