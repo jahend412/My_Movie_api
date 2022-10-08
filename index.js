@@ -10,7 +10,7 @@ const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 const Movies = Models.Movie;
 const Users = Models.User;
-const port = process.env.PORT || 8080;
+
   
 //mongoose.connect('mongodb://localhost:27017/myMovieDB', {useNewUrlParser: true, useUnifiedTopology: true });   //(Local connection)
 
@@ -257,6 +257,7 @@ app.use((err, req, res, next) => {
 
 //LISTEN FOR REQUEST
 
+const port = process.env.PORT || 8080;
 
 app.listen(port, '0.0.0.0', () => {
   console.log('Listening on Port ' + port);
