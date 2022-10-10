@@ -5,9 +5,8 @@ const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
 const Models = require('./models.js');
-const cors = require('cors');
-const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
+
 const Movies = Models.Movie;
 const Users = Models.User;
 
@@ -20,6 +19,8 @@ app.use(express.static('public'));
 app.use(morgan('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+
+const cors = require('cors');
 app.use(cors());
 
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
