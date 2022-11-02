@@ -60,7 +60,7 @@ app.get('/documentation',
 app.get('/movies', function (req, res) {
   //passport.authenticate('jwt', { session: false}), (req, res) => {
   Movies.find()
-    .then((movies) => {
+    .then(function (movies) {
       res.status(201).json(movies);
     })
     .catch((err) => {
