@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require('cors');
 app.use(cors());
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234'];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -57,7 +57,7 @@ app.get('/documentation',
 
 //GET REQUEST(MOVIES) return JSON object when at /movies
 
-app.get('/movies',
+app.get('/movies', function (req, res) {
   //passport.authenticate('jwt', { session: false}), (req, res) => {
   Movies.find()
     .then((movies) => {
