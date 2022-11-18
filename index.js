@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require('cors');
 app.use(cors());
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:50910'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com',];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -57,17 +57,18 @@ app.get('/documentation',
 
 //GET REQUEST(MOVIES) return JSON object when at /movies
 
-app.get('/movies', function (req, res) {
-  //passport.authenticate('jwt', { session: false}), (req, res) => {
-  Movies.find()
-    .then(function (movies) {
-      res.status(201).json(movies);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
-});
+app.get('/movies',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Movies.find()
+      .then(function (movies) {
+        res.status(201).json(movies);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  });
 
 //GET REQUEST(MOVIES) Returns Data about single movie, by name
 
