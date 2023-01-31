@@ -12,6 +12,7 @@ const Users = Models.User;
 require('dotenv').config();
 
 //mongoose.connect('mongodb://localhost:27017/myMovieDB', {useNewUrlParser: true, useUnifiedTopology: true });   //(Local connection)
+
 mongoose.set('strictQuery', false);
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
