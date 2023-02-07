@@ -3,18 +3,18 @@ const bodyParser = require('body-parser')
 const uuid = require('uuid');
 const morgan = require('morgan');
 const app = express();
+require('dotenv').config();
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 const { check, validationResult } = require('express-validator');
 
 const Movies = Models.Movie;
 const Users = Models.User;
-require('dotenv').config();
 
-//mongoose.connect('mongodb://localhost:27017/myMovieDB', {useNewUrlParser: true, useUnifiedTopology: true });   //(Local connection)
 
+//mongoose.connect('mongodb://localhost:27017/myMovieDB', { useNewUrlParser: true, useUnifiedTopology: true });   //(Local connection)
+console.log(process.env.CONNECTION_URI)
 mongoose.set('strictQuery', false);
-mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(express.static('public'));
 app.use(morgan('common'));
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require('cors');
 app.use(cors());
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'https://mymovieapp44.netlify.app', 'https://jahend412.github.io'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'https://mymovieapp44.netlify.app', 'https://jahend412.github.io', 'http://localhost:4200', 'http://localhost:1234'];
 
 app.use(cors({
   origin: (origin, callback) => {
