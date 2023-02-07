@@ -11,9 +11,8 @@ const { check, validationResult } = require('express-validator');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-
 //mongoose.connect('mongodb://localhost:27017/myMovieDB', { useNewUrlParser: true, useUnifiedTopology: true });   //(Local connection)
-console.log(process.env.CONNECTION_URI)
+
 mongoose.set('strictQuery', false);
 
 app.use(express.static('public'));
@@ -24,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require('cors');
 app.use(cors());
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'https://mymovieapp44.netlify.app', 'https://jahend412.github.io', 'http://localhost:4200', 'http://localhost:1234'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'https://mymovieapp44.netlify.app', 'https://jahend412.github.io', 'http://localhost:1234', 'http://localhost:4200'];
 
 app.use(cors({
   origin: (origin, callback) => {
