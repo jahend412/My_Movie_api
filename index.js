@@ -25,7 +25,7 @@ const cors = require('cors');
 app.use(cors());
 
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'https://mymovieapp44.netlify.app', 'https://jahend412.github.io', 'http://localhost:1234', 'http://localhost:4200'];
+let allowedOrigins = ['http://localhost:8080', 'https://mymovieapp44.netlify.app', 'https://jahend412.github.io', 'http://localhost:1234', 'http://localhost:4200'];
 
 
 app.use(cors({
