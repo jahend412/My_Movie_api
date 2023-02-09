@@ -1,7 +1,7 @@
 ### My_Movie_api ###
 
 This is a movie API, which contains information about movie's title, description, genre, director, imageURL and whether it is featured or not. For genre, the genre's name and a short description about the genre are included. For director, his or her name, bio, birth year and death year are included.
-It also allows users to register with an username, password and Email address and to log in with username and password. Users can add/delete movies to their favorite movies list. They can also delete their user information.
+It also allows users to register by entering their own username, password, email address, and birthday.  Then they can log in with username and password. Users can add/delete movies to their favorite movies list. They can also delete their user information.
 
 ###### Key Features ######
 - Return a list of ALL movies to the user
